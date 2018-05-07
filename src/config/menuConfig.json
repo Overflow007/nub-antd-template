@@ -1,0 +1,16 @@
+[{
+  "pathname": "/flow/edit/(?<id>[\\d]+)",
+  "entry":""
+},{
+  "pathname": "/home",
+  "entry":""
+},{
+  "pathname": "/login",
+  "entry":""
+},{
+  "pathname": "demo",
+  "search": "?key=value",
+  "hash": "#extra-information",
+  "state": { "modal": true },
+  "key": "abc123" 
+}]

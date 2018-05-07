@@ -1,0 +1,20 @@
+$prefix: flow-tachemgr-modal;
+
+.#{$prefix}- {
+
+  &tache-save-modal {
+    width: 60% !important;
+  }
+
+  &tache-save-form {
+
+    .ant-form-item {
+      display: flex;
+    }
+
+    .ant-form-item-control-wrapper {
+      flex: 1;
+    }
+
+  }
+}

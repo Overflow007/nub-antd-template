@@ -1,0 +1,23 @@
+@import 'src/styles/vars';
+$prefix: number;
+.#{$prefix}- {
+  &content {
+    font-style: normal;
+    font-size: 11px;
+    color: #848484;
+    background: #eff1f4;
+    padding: 0 5px;
+    margin-left: 5px;
+    border-radius: 8px;
+    min-width: 22px;
+    display: inline-block;
+    text-align: center;
+    height: 16px;
+    line-height: 16px;
+  }
+
+  &type-primary {
+    color: white;
+    background-color: $primary-color;
+  }
+}

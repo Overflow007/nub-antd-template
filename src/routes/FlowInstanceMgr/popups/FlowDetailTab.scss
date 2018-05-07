@@ -1,0 +1,32 @@
+$prefix: flow-detail-tab;
+
+.#{$prefix} {
+    
+    top: 50px !important;
+    height: calc(100% - 80px);
+
+    .ant-modal-content {
+        height: 100%;
+    }
+
+    .ant-modal-body {
+        height: calc(100% - 54px);
+        padding-bottom: 0;
+    }
+
+    .ant-tabs {
+        height: 100%;
+    }
+
+    .ant-tabs-bar {
+        margin: 0;
+    }
+
+    .ant-tabs-content {
+        height: calc(100% - 40px);
+    }
+
+    .ant-tabs-tabpane {
+        height: 100%;
+    }
+}

@@ -1,0 +1,64 @@
+$prefix: status-layer;
+@keyframes loading-fade-delay {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.#{$prefix}- {
+  &light {
+    background: rgba(255, 255, 255, 1);
+    animation: #{$prefix}-light-animate 2s;
+    color: #999;
+  }
+  &dark {
+    background: rgba(52, 61, 67, 1);
+    animation: #{$prefix}-dark-animate 2s;
+    color: #fff;
+  }
+  &container {
+    height: 100%;
+    position: relative;
+  }
+  &content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  }
+  &icon {
+    margin-right: 5px;
+    z-index: 1;
+  }
+  &loading-icon {
+    animation: loading-fade-delay 1s linear infinite;
+  }
+  &font {
+    font-size: 12px;
+  }
+}
+
+@keyframes #{$prefix}-light-animate {
+  from {
+    background: rgba(255, 255, 255, 0);
+  }
+  to {
+    background: rgba(255, 255, 255, 1);
+  }
+}
+@keyframes #{$prefix}-dark-animate {
+  from {
+    background: rgba(52, 61, 67, 0);
+  }
+  to {
+    background: rgba(52, 61, 67, 1);
+  }
+}

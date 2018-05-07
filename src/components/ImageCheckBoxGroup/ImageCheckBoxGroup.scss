@@ -1,0 +1,18 @@
+$prefix: image-check-box-group;
+.#{$prefix} {
+  display: flex;
+  flex-wrap: wrap;
+  .image-check-box {
+    margin: 5px 10px;
+  }
+
+  .image-check-box-image,
+  .image-check-box-text {
+    cursor: pointer;
+  }
+}
+.#{$prefix}- {
+  &vertical {
+    flex-direction: column;
+  }
+}

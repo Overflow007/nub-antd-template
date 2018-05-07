@@ -1,0 +1,83 @@
+$prefix: flow-worktimemgr;
+
+.#{$prefix} {
+
+    height: 100%;
+    background: #FFFFFF;
+
+    .ant-card {
+        position: relative;
+        height: 100%;
+    }
+
+    .ant-card-head {
+
+        height: 56px;
+        padding: 0 10px !important;
+
+        .ant-card-extra {
+            padding: 8px 0;
+        }
+    }
+
+    .ant-card-body {
+        padding: 0 !important;
+        position: relative;
+        height: calc(100% - 54px);
+    }
+
+    .toolBar {
+        height: 52px;
+    }
+}
+
+.#{$prefix}- {
+    &sider {
+
+        height: 100%;
+        position: relative;
+        background: #FFFFFF !important;
+        border: 1px solid #f0f2f5;
+
+        .toolBar {
+            background-color: #eeeeee;
+
+            button {
+                margin: 10px 5px;
+            }
+        }
+
+        .ant-tree {
+            position: relative;
+            height: calc(100% - 52px);
+            overflow: auto;
+        }
+    }
+
+    &content {
+
+        overflow: initial;
+        overflow-x: inherit !important;
+
+        .ant-card-head {
+
+            .ant-form-item {
+                margin-right: 0px !important;
+                margin-left: 16px !important;
+            }
+
+        }
+
+        .toolBar {
+            padding: 10px;
+            background: #FFFFFF;
+            margin-top: 1px;
+            height: 51px;
+        }
+
+        .standardTable {
+            margin: 0 0 0 10px;
+        }
+
+    }
+}

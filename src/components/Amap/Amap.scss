@@ -1,0 +1,12 @@
+$prefix: amap;
+.#{$prefix} {
+  background-color: #192840;
+  position: relative;
+
+  .amap-container,
+  .#{$prefix}-canvas {
+    transition: width 0.5s, height 0.5s;
+  }
+}
+.#{$prefix}- {
+}

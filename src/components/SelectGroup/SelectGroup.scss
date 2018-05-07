@@ -1,0 +1,9 @@
+$prefix: select-group;
+.#{$prefix} {
+  .ant-select {
+    margin-right: 5px;
+    margin-bottom: 3px;
+  }
+}
+.#{$prefix}- {
+}

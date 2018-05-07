@@ -1,0 +1,130 @@
+@import 'src/styles/vars';
+$prefix: top-bar;
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  &-icon,
+  &-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+@mixin primary-button() {
+  width: 102px;
+  color: #fff;
+  opacity: 0.7;
+  font-size: 16px;
+}
+
+@mixin second-button($width: 70px) {
+  height: 100%;
+  width: $width;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.#{$prefix}- {
+  &container {
+    height: 100%;
+  }
+  &top-bar {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+    align-items: center;
+    background: #1b2126;
+    height: 50px;
+  }
+  &children {
+    height: 100%;
+    padding-top: 50px;
+  }
+  &background {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  &left-part {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    z-index: 1000;
+  }
+  &right-part {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    z-index: 1000;
+  }
+  &logo {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+    padding-left: 18px;
+  }
+  &main-button {
+    @include flex-center();
+    margin-left: 155px;
+    // a {
+    //   height: 100%;
+    // }
+  }
+  &nav-item {
+    @include flex-center();
+    @include primary-button();
+    cursor: pointer;
+  }
+  &setting-item {
+    @include flex-center();
+    @include second-button('auto');
+    padding: 0 19px;
+    cursor: pointer;
+  }
+  &selected {
+    height: 50px;
+    background: #405562;
+    border-top: 4px solid $primary-color;
+    opacity: 1;
+  }
+  &user-drop {
+    background: #314450;
+    // height: 40px;
+    margin-top: -5px;
+    color: #fff;
+    .#{$prefix}-item {
+      text-align: center;
+      height: 40px;
+      line-height: 40px;
+      width: 100%;
+      cursor: pointer;
+    }
+    .#{$prefix}-item:hover {
+      background: #394b56;
+    }
+  }
+  &hover {
+    background: #314450;
+  }
+  &nav-menu {
+    background: #1b2126 !important;
+  }
+  &nav-menu-item {
+    text-align: center !important;
+    line-height: 25px;
+  }
+  &item-selected {
+    background: #405562 !important;
+  }
+}

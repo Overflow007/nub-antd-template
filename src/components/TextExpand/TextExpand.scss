@@ -1,0 +1,63 @@
+$prefix: text-expand;
+.#{$prefix} {
+  position: relative;
+  transition: height 0.3s;
+}
+
+.#{$prefix}- {
+  &text {
+    position: relative;
+    width: 100%;
+    text-overflow: ellipsis;
+    transition: opacity 0.3s;
+    opacity: 1;
+    overflow: hidden;
+    word-wrap: normal;
+    white-space: nowrap;
+  }
+  &expand {
+    // animation: #{$prefix}-display-block 0.5s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    // max-height: 200px;
+    overflow: auto;
+    // display: none;
+  }
+
+  &text.#{$prefix}-hover {
+    // animation: #{$prefix}-fade-out 0.5s;
+    opacity: 0;
+  }
+  &expand.#{$prefix}-not-hover {
+    opacity: 0;
+    animation: #{$prefix}-fade-out 0.3s;
+  }
+  &expand.#{$prefix}-hover {
+    opacity: 1;
+    display: block;
+    animation: #{$prefix}-fade-in 0.3s;
+  }
+}
+
+@keyframes #{$prefix}-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes #{$prefix}-fade-out {
+  0% {
+    opacity: 1;
+    display: block;
+  }
+  100% {
+    opacity: 0;
+    display: block;
+  }
+}

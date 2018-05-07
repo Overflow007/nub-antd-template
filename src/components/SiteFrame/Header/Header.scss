@@ -1,0 +1,105 @@
+@import 'src/styles/vars';
+@import 'src/styles/mixins/utils';
+$prefix:'site-nav';
+$bar_height:50px;
+.#{$prefix}- {
+    @include media-up(768px) {
+        &brand {
+            width: 200px;
+            
+        }
+    }
+
+    &usermenu {
+        &_dropdown{
+            min-width: 160px;
+            .anticon {
+                margin-right: 8px;
+            }
+
+            .ant-dropdown-menu-item{
+                
+            }
+        }
+
+        &_trigger{
+            
+            float: right;
+            cursor: pointer;
+            height: 50px;
+            line-height: 50px;
+            padding: 0 12px 0 12px;
+            margin-right: 12px;
+        }
+        
+    }
+
+    &brand {
+        height: $bar_height;
+        line-height: $bar_height;
+        float: left;
+        >a {
+            &:hover{
+                transform: scale(1.4);
+                text-align: center;
+                text-transform: none;
+                color:white;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+            }
+            transition: all .3s;
+            padding: 0 0 0 20px;
+            font-size: 17px;
+            font-weight: 700;
+            line-height: $bar_height;
+            text-align: center;
+            color: #70bcff;
+            //color: #7793a7;
+            .site-logo{
+                width: 100px;
+            }
+            .site-name{
+                color:white;
+                user-select:none;
+                margin-left: 10px;
+            }
+        }
+    }
+    &brand_collapsed{
+        width: 60px;
+        text-align: center;
+        >a {
+            display: block;
+            padding: 0 0 0 5px;
+            .site-logo{
+                width:100%;
+                height: auto;
+            }
+            .site-name {
+                display: none;
+
+            }
+        }
+    }
+
+    &slider {
+        padding: 0px 12px;
+        cursor: pointer;
+        line-height: 50px !important;
+    }
+
+    &header {
+        @include clearfix();
+        position: fixed;
+        top: 0;
+        width: 100%;
+        min-height: $bar_height;
+        box-shadow: 0 1px 4px rgba(0,21,41,.08);
+        outline: 0;
+        &_dark{
+            color: #7793a7;
+            background-color: #1c2b36;
+        }
+    }
+}
+

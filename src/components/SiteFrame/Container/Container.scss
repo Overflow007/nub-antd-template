@@ -1,0 +1,66 @@
+@import 'src/styles/vars';
+@import 'src/styles/mixins/utils';
+$prefix:'site-content';
+
+.#{$prefix}- {
+    
+    &container{//bfc
+        position: absolute;
+        top:50px;
+        left:200px;
+        bottom:0px;
+        right: 0px;
+        overflow: auto;
+
+        &-tabitem{
+            height: calc(100% - 48px);
+            >div{
+                height: 100%;
+                overflow: auto;
+            }
+        }
+
+        >.ant-tabs{
+            >.ant-tabs-bar{
+                border:none;
+                margin: 0 0 1px 0;
+                background-color: #f6f8f8;
+                border-bottom: 1px solid #dee5e7;
+                padding: 5px 0px 0px 5px; 
+                >.ant-tabs-nav-container{
+                    .ant-tabs-tab{
+                        background-color:transparent;
+                        border: none; 
+                    }
+
+                    .ant-tabs-tab-active{
+                        padding: 0 12px 1px 12px;
+                        
+
+                        >div{
+                            padding: 0 4px;
+                            border-bottom: 3px solid #47a4ff;
+                        }
+                    }
+                }
+            }
+
+            >.ant-tabs-content{
+                height: calc(100% - 48px);
+                >.ant-tabs-tabpane{
+                    min-height: 100%;
+                    overflow: auto;
+                }
+            }
+        }
+    }
+
+    &container_collapsed{
+        left:60px;
+    }
+
+    &container_full{
+        left:0px;
+    }
+}
+

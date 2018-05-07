@@ -1,0 +1,9 @@
+$prefix: date-range;
+.#{$prefix} {
+  display: inline-block;
+}
+.#{$prefix}- {
+  &label {
+    margin: 0 5px 0 25px;
+  }
+}

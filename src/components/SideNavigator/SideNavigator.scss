@@ -1,0 +1,117 @@
+@import 'src/styles/vars';
+$prefix: side-navigator;
+$left-bar-padding: 15px;
+$left-bar-color: #c2c6d0;
+$left-bar-width: 2px;
+$left-bar-round-size: 12px;
+$item-round-size: 8px;
+
+.#{$prefix} {
+  display: inline-block;
+  position: relative;
+
+  @for $i from 1 through 10 {
+    .#{$prefix}-child-item#{$i} .#{$prefix}-text {
+      padding-left: #{$left-bar-padding * $i};
+    }
+  }
+}
+.#{$prefix}- {
+  &item {
+    margin-left: #{$left-bar-padding * 2};
+    font-size: 14px;
+    padding: 0 5px;
+    > .#{$prefix}-text {
+      // font-weight: 600;
+      color: #151515;
+    }
+  }
+
+  &item:nth-child(n + 2) {
+    margin-top: 10px;
+  }
+
+  &child-item .#{$prefix}-text {
+    // padding-left: $left-bar-padding;
+    font-size: 12px;
+  }
+
+  &left-bar {
+    position: absolute;
+    height: calc(100% - #{$left-bar-padding * 2});
+    background-color: $left-bar-color;
+    left: $left-bar-padding;
+    top: $left-bar-padding;
+    width: $left-bar-width;
+  }
+
+  &left-bar:before,
+  &left-bar:after {
+    position: absolute;
+    display: block;
+    width: $left-bar-round-size;
+    height: $left-bar-round-size;
+    margin-left: -#{($left-bar-round-size - $left-bar-width) / 2};
+    background-color: #fff;
+    border: $left-bar-width solid $left-bar-color;
+    border-radius: 50%;
+    content: '';
+  }
+
+  &left-bar:before {
+    top: -#{($left-bar-round-size - $left-bar-width) / 2 + 2};
+  }
+
+  &left-bar:after {
+    bottom: -#{($left-bar-round-size - $left-bar-width) / 2 + 3};
+  }
+
+  &item:before {
+    position: absolute;
+    display: block;
+    content: '';
+    width: $item-round-size;
+    height: $item-round-size;
+    border-radius: 50%;
+    background-color: $left-bar-color;
+    border: 1px solid #fff;
+    left: $left-bar-padding;
+    margin-left: -#{$item-round-size / 2 - 1};
+    margin-top: #{18 - $item-round-size};
+  }
+
+  &item:first-child:before,
+  &item:last-child:before {
+    display: none;
+  }
+
+  /* 选中效果 */
+  &arrow {
+    transition: top 0.3s;
+    left: #{$left-bar-padding - 9};
+    top: 10px;
+    width: 18px;
+    height: 12px;
+    background-color: $primary-color;
+    position: absolute;
+  }
+
+  &arrow:after {
+    display: block;
+    content: '';
+    position: absolute;
+    border-left: 6px solid $primary-color;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    right: -6px;
+  }
+  &text {
+    padding: 3px 5px;
+    cursor: pointer;
+  }
+  &text:hover,
+  &text.#{$prefix}-checked {
+    // background-color: #e2e5eb;
+    color: $primary-color;
+  }
+}

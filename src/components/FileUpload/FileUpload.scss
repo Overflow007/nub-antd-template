@@ -1,0 +1,10 @@
+@import 'src/styles/vars';
+$prefix: file-upload;
+.#{$prefix}- {
+  &button {
+    background: $primary-color;
+    border-radius: 1px;
+    width: 71px;
+    height: 26px;
+  }
+}

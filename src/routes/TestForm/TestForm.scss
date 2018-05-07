@@ -1,0 +1,11 @@
+$prefix: page-not-found;
+.#{$prefix} {
+  margin-top: 20%;
+  font-size: 6em;
+  text-align: center;
+  color: #ccc;
+  font-weight: bold;
+  opacity: 0.5;
+}
+.#{$prefix}- {
+}

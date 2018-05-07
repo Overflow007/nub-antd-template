@@ -1,0 +1,72 @@
+@import 'src/styles/vars';
+$prefix: timeline;
+$index-text-color: $primary-color;
+$index-text-bg-color-no-work: #cef5fe;
+$index-text-size: 28px;
+$index-font-size: 16px;
+$index-tail-height: 20px;
+/* 左侧文字，中间序号，右侧文字之间的距离 */
+$index-text-margin: 10px;
+.#{$prefix} {
+}
+
+.#{$prefix}- {
+  &item-with-tail {
+    position: relative;
+  }
+  &item {
+    cursor: pointer;
+  }
+
+  &item:hover {
+    .#{$prefix}- {
+      &left-text,
+      &right-text {
+        color: $index-text-color;
+      }
+    }
+  }
+
+  &index,
+  &left-text,
+  &right-text {
+    display: inline-block;
+    vertical-align: middle;
+    transition: color 0.3s;
+  }
+
+  &index {
+    background-color: white;
+    text-align: center;
+    width: $index-text-size;
+    height: $index-text-size;
+    border-radius: 50%;
+    border: 1px solid $index-text-color;
+    color: $index-text-color;
+    font-size: $index-font-size;
+  }
+
+  &no-work {
+    background-color: $index-text-bg-color-no-work;
+  }
+
+  &left-text {
+    width: calc(50% - #{$index-text-size / 2 + 2 * $index-text-margin});
+    text-align: right;
+    margin: 0 #{$index-text-margin};
+  }
+
+  &right-text {
+    width: calc(50% - #{$index-text-size / 2 + 2 * $index-text-margin});
+    margin: 0 #{$index-text-margin};
+  }
+
+  &tail {
+    height: $index-tail-height;
+    position: relative;
+    left: 50%;
+    border-left: 1px solid $index-text-color;
+    width: 0;
+    margin: 7px 0 5px 0;
+  }
+}

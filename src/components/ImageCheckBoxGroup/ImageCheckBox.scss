@@ -1,0 +1,117 @@
+@import 'src/styles/vars';
+$prefix: image-check-box;
+$box-size: 18px;
+$check-height: 10px;
+$check-width: 6px;
+$check-color: $primary-color;
+$check-border: 3px solid #{$check-color};
+
+.#{$prefix} {
+  display: flex;
+}
+
+.#{$prefix}:hover {
+  .#{$prefix}-text {
+    color: $primary-color;
+  }
+}
+.#{$prefix}- {
+  &disabled * {
+    cursor: not-allowed !important;
+    color: #666 !important;
+    opacity: 0.75;
+  }
+
+  &check-btn {
+    margin: auto;
+  }
+  &check-btn {
+    width: $box-size;
+    height: $box-size;
+    border-radius: 3px;
+    background: linear-gradient(
+      rgba(245, 245, 245, 0.5),
+      rgba(255, 255, 255, 0.5)
+    );
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5),
+      0 1px 0px rgba(226, 226, 226, 0.4);
+    position: relative;
+    cursor: pointer;
+  }
+
+  &checked {
+    box-shadow: inset 0 1px 3px $check-color, 0 1px 0px rgba(226, 226, 226, 0.4);
+  }
+
+  &radio {
+    border-radius: #{0.5 * $box-size};
+  }
+
+  &check-btn:after {
+    content: '';
+    width: $check-width;
+    height: $check-height;
+    border-right: $check-border;
+    border-bottom: $check-border;
+    transform: rotate(45deg);
+    position: absolute;
+    top: #{0.5 * ($box-size - $check-height)};
+    left: #{0.5 * ($box-size - $check-width)};
+    transition: opacity 0.5s;
+    opacity: 0;
+  }
+
+  &radio:after {
+    width: #{0.5 * $box-size};
+    height: #{0.5 * $box-size};
+    top: #{0.25 * $box-size + 1};
+    left: #{0.25 * $box-size};
+    border-radius: #{0.25 * $box-size};
+    border: $check-border;
+    background-color: $check-color;
+  }
+
+  &check-btn:hover:after {
+    opacity: 0.3;
+  }
+
+  &disabled .#{$prefix}-check-btn {
+    background: linear-gradient(
+      rgba(220, 220, 220, 0.5),
+      rgba(200, 200, 200, 0.5)
+    );
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.4);
+  }
+
+  &disabled .#{$prefix}-check-btn:hover:after {
+    opacity: 0;
+  }
+
+  &checked:after {
+    opacity: 0.9 !important;
+  }
+
+  &image {
+    margin: 0 15px;
+    width: 50px;
+    height: 40px;
+    overflow: hidden;
+  }
+  &text {
+    transition: color 0.5s;
+    width: 80px;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  &hide-image {
+    .#{$prefix}-check-btn {
+      margin: initial;
+    }
+    .#{$prefix}-text {
+      width: auto;
+      text-align: left;
+      margin-left: 5px;
+    }
+  }
+}

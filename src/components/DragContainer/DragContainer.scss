@@ -1,0 +1,25 @@
+$prefix: drag-container;
+.#{$prefix} {
+}
+.#{$prefix}- {
+  &item {
+    user-select: none;
+    display: inline-block;
+  }
+
+  &dragged-item {
+    // visibility: hidden;
+    opacity: 0;
+  }
+
+  &dragging {
+    .#{$prefix}-item {
+      position: relative;
+      transition: top 0.2s, left 0.2s;
+    }
+  }
+
+  &proxy {
+    position: absolute;
+  }
+}

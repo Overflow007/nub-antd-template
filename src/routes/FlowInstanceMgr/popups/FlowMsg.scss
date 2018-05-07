@@ -1,0 +1,17 @@
+$prefix: flow-ins-msg;
+
+.#{$prefix} {
+
+    height: 100%;
+
+    .ant-table-bordered .ant-table-thead > tr > th, .ant-table-bordered .ant-table-tbody > tr > td {
+        word-break: keep-all;
+        white-space: nowrap;
+        overflow: -webkit-paged-x;
+    }
+
+    .ant-tabs-content {
+        height: calc(100% -44px) !important;
+    }
+
+}

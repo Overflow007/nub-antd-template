@@ -1,0 +1,12 @@
+@import 'src/styles/vars';
+@import 'src/styles/mixins/utils';
+$prefix:'ToDoTheWorkList';
+
+.#{$prefix}- {
+    &row {
+        background-color: '#FFFFFF';
+        &_selected{
+            background-color: #e6f7ff;
+        }
+    }
+}

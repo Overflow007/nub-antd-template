@@ -1,0 +1,20 @@
+
+.standardTable {
+    :global {
+      .ant-table-pagination {
+        margin-top: 24px;
+      }
+    }
+  
+    .tableAlert {
+      margin-bottom: 16px;
+    }
+
+    .standardTable-row_selected{
+      background-color: #e6f7ff;
+      td{
+        background-color: #e6f7ff !important;
+      }
+    }
+  }
+  

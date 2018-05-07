@@ -1,0 +1,24 @@
+$prefix: flow-worktime-modal;
+
+.#{$prefix}- {
+
+  &worktime-save-modal {
+    width: 85% !important;
+  }
+
+  &worktime-save-form {
+
+    .ant-form-item {
+      display: flex;
+    }
+
+    .ant-form-item-control-wrapper {
+      flex: 1;
+    }
+
+  }
+}
+
+.editable-row-operations a {
+  margin-right: 8px;
+}
